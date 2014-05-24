@@ -1,0 +1,253 @@
+.previewer-open {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    > * {
+        display: none !important;
+    }
+
+    .previewer {
+        display: block !important;
+    }
+}
+
+.previewer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 20140520; // Create day
+    background-color: #f7f7f7;
+    overflow: auto;
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+}
+
+// Mainbody & viewport
+
+.previewer-mainbody {
+    height: 100%;
+    margin-left: 60px;
+}
+
+.previewer-viewport {
+    display: block;
+    border: 0;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .previewer-phone & {
+        max-width: 767px;
+    }
+
+    .previewer-tablet & {
+        max-width: 991px;
+    }
+
+    .previewer-laptop & {
+        max-width: 1199px;
+    }
+
+    .previewer-desktop & {
+        max-width: 100%;
+    }
+}
+
+// Sidebar & nav
+
+.previewer-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    background-color: #fff;
+    border-right: 1px solid #f7f7f7;
+}
+
+.previewer-nav {
+    padding-left: 0;
+    list-style: none;
+
+    > li {
+        border-left: 1px solid transparent;
+        height: 60px;
+
+        &:hover {
+            border-left-color: #69c;
+            background-color: #f7f7f7;
+        }
+
+        > a {
+            display: block;
+            height: 100%;
+            padding: 10px;
+            line-height: 40px;
+            text-decoration: none;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.previewer-phone li[title="Phone"],
+.previewer-tablet li[title="Tablet"],
+.previewer-laptop li[title="Laptop"],
+.previewer-desktop li[title="Desktop"] {
+    border-left-color: #69c;
+    background-color: #f7f7f7;
+}
+
+.previewer-close {
+    display: block;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    border: 0;
+    background-image: none;
+    background-color: #fff;
+    color: #333;
+    font-size: 30px;
+    line-height: normal;
+    opacity: .2;
+    filter: alpha(opacity=20);
+
+    &:hover,
+    &:focus {
+        opacity: .5;
+        filter: alpha(opacity=50);
+        outline: none;
+    }
+}
+
+// Device icons (40px * 40px)
+
+.previewer-icon-phone {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 24px;
+    border: 1px solid #333;
+    margin: 0 8px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        border: 1px solid #333;
+        content: " ";
+    }
+
+    &:before {
+        top: 3px;
+        left: 1px;
+        height: 29px;
+        width: 20px;
+    }
+
+    &:after {
+        bottom: 1px;
+        left: 10px;
+        height: 4px;
+        width: 4px;
+    }
+}
+
+.previewer-icon-tablet {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 30px;
+    border: 1px solid #333;
+    margin: 0 5px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        border: 1px solid #333;
+        content: " ";
+    }
+
+    &:before {
+        top: 3px;
+        left: 2px;
+        height: 29px;
+        width: 24px;
+    }
+
+    &:after {
+        bottom: 1px;
+        left: 12px;
+        height: 4px;
+        width: 4px;
+    }
+}
+
+.previewer-icon-laptop {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-bottom: 1px solid #333;
+    margin: 9px 0;
+
+    &:before {
+        position: absolute;
+        bottom: 3px;
+        left: 4px;
+        height: 18px;
+        width: 32px;
+        display: block;
+        border: 1px solid #333;
+        content: " ";
+    }
+}
+
+.previewer-icon-desktop {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-bottom: 1px solid #333;
+    margin: 5px;
+
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        content: " ";
+    }
+
+    &:before {
+        top: 0;
+        left: -5px;
+        height: 24px;
+        width: 40px;
+        border: 1px solid #333;
+    }
+
+    &:after {
+        bottom: 2px;
+        left: 10px;
+        height: 1px;
+        width: 10px;
+        background-color: #333;
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "name": "previewer",
+    "version": "0.0.1",
+    "homepage": "https://github.com/fengyuanchen/previewer",
+    "authors": [
+        "Fengyuan Chen"
+    ],
+    "description": "A tool for web developers to quick preview and debug website between different screen width.",
+    "license": "MIT",
+    "main": [
+        "dist/previewer.js",
+        "dist/previewer.css"
+    ],
+    "keywords": [
+        "html",
+        "css",
+        "javacript",
+        "web",
+        "development",
+        "front-end",
+        "debug",
+        "tool",
+        "preview",
+        "jquery",
+        "plugin",
+        "diffent",
+        "screen",
+        "width"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "components",
+        "test",
+        "tests",
+        "build",
+        "release",
+        "demos"
+    ],
+    "dependencies": {
+        "jquery": ">= 1.9.0"
+    }
+}
