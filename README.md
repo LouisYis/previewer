@@ -22,11 +22,12 @@ dist/
 
 ### Quick start
 
-Two quick start options are available:
+Four quick start options are available:
 
 - [Download the latest release](https://github.com/fengyuanchen/previewer/archive/master.zip).
 - Clone the repository: `git clone https://github.com/fengyuanchen/previewer.git`.
-
+- Install with [NPM](http://npmjs.org): `npm install previewer`.
+- Install with [Bower](http://bower.io): `bower install previewer`.
 
 
 ### Installation
