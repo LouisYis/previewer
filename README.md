@@ -1,32 +1,35 @@
-# [Previewer](http://fengyuanchen.github.io/previewer)
+# [Previewer](https://github.com/fengyuanchen/previewer)
 
-A tool for web developers to quick preview and debug website between different screen (device) width.
+> A simple jQuery page preview plugin.
 
-- [Documentation](http://fengyuanchen.github.io/previewer)
-- [Demo](http://fengyuanchen.github.io/previewer?previewer)
-
-
-# Screen sizes
-
-- Phone / Extra small screen / 0 ~ 767px / [Preview](http://fengyuanchen.github.io/previewer?previewer=phone)
-- Tablet / Small screen / 768px ~ 991px / [Preview](http://fengyuanchen.github.io/previewer?previewer=tablet)
-- Laptop / Medium screen / 992px ~ 1199px / [Preview](http://fengyuanchen.github.io/previewer?previewer=laptop)
-- Desktop / Large screen  / 1200px ~ ∞ / [Preview](http://fengyuanchen.github.io/previewer?previewer=desktop)
+- [Demo](http://fengyuanchen.github.io/previewer)
 
 
-# Getting started
 
-## Quick start
+## Main
 
-Four quick start options are available:
+```
+dist/
+├── previewer.css     (4 KB)
+├── previewer.min.css (3 KB)
+├── previewer.js      (6 KB)
+└── previewer.min.js  (3 KB)
+```
 
-- [Download the latest release](https://github.com/fengyuanchen/previewer/zipball/master).
+
+
+## Getting started
+
+### Quick start
+
+Two quick start options are available:
+
+- [Download the latest release](https://github.com/fengyuanchen/previewer/archive/master.zip).
 - Clone the repository: `git clone https://github.com/fengyuanchen/previewer.git`.
-- Install with [NPM](http://npmjs.org): `npm install previewer`.
-- Install with [Bower](http://bower.io): `bower install previewer`.
 
 
-## Installation
+
+### Installation
 
 Include files:
 
@@ -37,43 +40,141 @@ Include files:
 ```
 
 
-## Usage
+### Usage
 
-### With url
+#### Initialize with `$.fn.previewer` method.
 
-Add the "previewer" search to the url as `index.html?previewer`, or with a param as `index.html?previewer=tablet`.
+```js
+// With option
+$('body').previewer({
+  show: true
+});
 
-### With attribute
-
-Add the "previewer" attribute to `<body>` element as `<body previewer>...</body>`, or with a param as `<body previewer="laptop">...</body>`.
-
-### With method
-
-Basic use as `$("body").previewer()`, or with a param as `$("body").previewer("desktop")`.
-
-**Note:** Only "body" element was supported.
+// With method
+$('body').previewer('show');
+```
 
 
-## Param
+#### Initialize with url search parameter.
 
-- type: string
-- options: "phone", "tablet", "laptop" and "desktop"
-- default: "phone"
+```
+http://example.com/?previewer
+```
 
-Setup with `$("body").previewer(param)`.
+
+
+## Options
+
+```js
+// Set previewer options
+$().previewer(options);
+
+// Change the global default options
+$.fn.previewer.setDefaults(options);
+```
+
+
+### show
+
+- Type: `Boolean`
+- Default: `false`
+
+Show the preview page directly when initialize.
+
+
+### type
+
+- Type: `String`
+- Default: `'phone'`
+- Options: `'phone'`, `'tablet'`, `'laptop'`, `'desktop'`
+
+Preview screen type.
+
+
+### phone
+
+- Type: `Number`
+- Default: `480`
+
+Extra small preview screen width.
+
+
+### tablet
+
+- Type: `Number`
+- Default: `768`
+
+Small preview screen width.
+
+
+### laptop
+
+- Type: `Number`
+- Default: `992`
+
+Middle preview screen width.
+
+
+### desktop
+
+- Type: `Number`
+- Default: `1200`
+
+Large preview screen width.
+
+
+
+## Methods
+
+
+```js
+$().previewer('method');
+```
+
+
+### show()
+
+Show the previewer.
+
+
+### hide()
+
+Hide the previewer.
+
+
+### destroy()
+
+Destroy the previewer.
+
+
+
+## No conflict
+
+If you have to use other plugin with the same namespace, just call the `$.fn.previewer.noConflict` method to revert to it.
+
+```html
+<script src="other-plugin.js"></script>
+<script src="previewer.js"></script>
+<script>
+  $.fn.previewer.noConflict();
+  // Code that uses other plugin's "$().previewer" can follow here.
+</script>
+```
+
 
 
 ## Browser Support
 
-- IE 8+
-- Chrome 33+
-- Firefox 27+
-- Safari 5.1+
-- Opera 19+
+- Chrome (latest 2)
+- Firefox (latest 2)
+- Internet Explorer 8+
+- Opera (latest 2)
+- Safari (latest 2)
 
-As a jQuery plugin, you can reference to the [jQuery Browser Support](http://jquery.com/browser-support/).
+As a jQuery plugin, you also need to see the [jQuery Browser Support](http://jquery.com/browser-support/).
 
 
-## [License](https://github.com/fengyuanchen/previewer/blob/master/LICENSE)
+
+## [License](LICENSE.md)
 
 Released under the [MIT](http://opensource.org/licenses/mit-license.html) license.
